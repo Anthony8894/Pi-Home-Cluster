@@ -15,7 +15,7 @@ To flash the operating system, I used the **Raspberry Pi Imager** application. T
 
 First, select the appropriate **Raspberry Pi model**.
 
-![image.png](attachment:3a3659a9-216d-450b-9282-b58997ddeff4:image.png)
+![image.png](/Screenshots/Initial_setup/02-initial_setup.png)
 
 Next, choose the operating system. For this project, I selected:
 
@@ -25,7 +25,7 @@ LTS stands for **Long-Term Support**, which provides extended security updates a
 
 When prompted, select the target storage device (the microSD card). In most cases, there should only be one available option.
 
-![image.png](attachment:e32c8c7a-7795-452d-adf8-6604bc92b40d:image.png)
+![image.png](/Screenshots/Initial_setup/03-initial_setup.png)
 
 ---
 
@@ -33,18 +33,18 @@ When prompted, select the target storage device (the microSD card). In most case
 
 During the customization stage, assign a **hostname** to the Raspberry Pi. This hostname will be used to identify the device on the network. Choose a clear and descriptive name, especially when working with multiple nodes.
 
-![image.png](attachment:290261fb-9196-4259-907a-946067cf73b6:image.png)
+![image.png](/Screenshots/Initial_setup/04-initial_setup.png)
 
 Next, create a **username and password** for the administrative user.
 
 In the networking section, enter your **Wi-Fi SSID and password** if you plan to use wireless networking. This allows the Raspberry Pi to automatically connect to the network on first boot.  
 If you plan to use Ethernet exclusively, this step can be skipped.
 
-![image.png](attachment:6c6b0cd3-ef5c-49fd-8e59-f1819a6422c1:image.png)
+![image.png](/Screenshots/Initial_setup/05-initial_setup.png)
 
 Ensure that **SSH (Secure Shell)** is enabled. SSH allows remote access to the Raspberry Pi through a terminal and is essential for headless server operation.
 
-![image.png](attachment:fdd6907a-a680-4af0-ac1e-5845d3441944:image.png)
+![image.png](/Screenshots/Initial_setup/06-initial_setup.png)
 
 Before proceeding, review all selected options. When ready, click **“I understand, Erase and write”**.  
 This process will overwrite all existing data on the microSD card. Once writing is complete, the application can be closed.
@@ -73,7 +73,7 @@ Before connecting, you must determine the device’s **IP address**. There are s
 
 In my case, I used the ASUS router management interface to locate the assigned IP address.
 
-![image.png](attachment:7fd09e68-d616-4988-a749-545510f0ba61:image.png)
+![image.png](/Screenshots/Initial_setup/07-initial_setup.png)
 
 From a separate computer, open a terminal and run:
 
@@ -87,14 +87,14 @@ ssh-keygen -R <pi-ip-address>
 
 Then re-run the SSH initial command. 
 
-[image]
+![image](/Screenshots/Initial_setup/08-initial_setup.png)
 
 when prompted to continue connecting, type "yes", then enter the user password.
 
-[image_holder]
+![image_holder](/Screenshots/Initial_setup/09-initial_setup.png)
 
 Once authenticated, you are successfully connect to the Raspberry PI. 
 
-[image]
+![image](/Screenshots/Initial_setup/10-initial_setup.png)
 
 your terminal prompt should now display the Rasberry Pi hostname = which means you connected successfully. 
