@@ -47,7 +47,7 @@ sudo dpkg-reconfigure unattended-upgrades
 
 This configuration allows the system to automatically install security updates, typically running once per day by default.
 
-(image2)
+![image2](/Screenshots/System_Hardening/02-System_hardening.png)
 
 ## User & Privilege Management
 Disable Root SSH Access
@@ -58,12 +58,12 @@ Edit the SSH configuration file:
 ```bash
 sudo nano /etc/ssh/sshd_config
 ```
-(image3)
+![image3](/Screenshots/System_Hardening/03-System_hardening.png)
 
 Make sure that this is present by removing the "#": 
 PermitRootLogin no
 
-(image4)
+![image4](/Screenshots/System_Hardening/04-System_hardening.png)
 
 Save the file:
 CTRL + O -------> Enter
@@ -85,7 +85,7 @@ sudo whoami
 
 The expected output should be root.
 
-(image5)
+![image5](/Screenshots/System_Hardening/05-System_hardening.png)
 
 
 ## SSH hardening
@@ -105,8 +105,8 @@ PasswordAuthentication no
 PubkeyAuthentication yes
 ```
 
-(image6)
-(image7)
+![image6](/Screenshots/System_Hardening/06-System_hardening.png)
+![image6](/Screenshots/System_Hardening/07-System_hardening.png)
 
 Save the file and restart SSH
 ```bash
@@ -146,7 +146,7 @@ Only explicitly allowed ports are accessible
 
 All other inbound traffic is denied by default
 
-(image8)
+![image8](/Screenshots/System_Hardening/08-System_hardening.png)
 
 
 ##  Disable Unnecessary Services
