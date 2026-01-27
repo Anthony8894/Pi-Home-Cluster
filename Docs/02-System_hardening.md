@@ -32,7 +32,7 @@ Before making any security changes, the system should be fully up to date.
 sudo apt update && sudo apt upgrade -y
 ```
 
-(image)
+![image1](/Screenshots/System_Hardening/01-System_hardening.png)
 
 Keeping packages updated ensures that known vulnerabilities are patched before services are deployed.
 
