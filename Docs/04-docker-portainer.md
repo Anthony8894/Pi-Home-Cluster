@@ -87,7 +87,7 @@ docker volume create portainer_data
 
 ```
 
-![image.png]()
+![image.png1](/Screenshots/Docker-Portainer/01-Dokcer_Portainer.png)
 
 ### Deploy Portainer Server
 
@@ -102,7 +102,8 @@ docker run -d \
 
 ```
 
-![image.png]()
+![image.png2](/Screenshots/Docker-Portainer/02-Dokcer_Portainer.png)
+
 
 Portainer Server will be accessible at:
 
@@ -113,7 +114,7 @@ http://<pi-main-ip>:9000
 
 Type this in your browser. Make sure port 9000 is included. 
 
-![image.png]()
+![image.png3](/Screenshots/Docker-Portainer/03-Dokcer_Portainer.png)
 
 ## Install Portainer Agent (WORKER NODE ONLY)
 
@@ -134,7 +135,8 @@ docker run -d \
 
 The agent allows the Portainer Server on `pi-main` to securely manage the worker node.
 
-![image.png]()
+![image.png4](/Screenshots/Docker-Portainer/04-Dokcer_Portainer.png)
+
 
 ## Verify Cluster Visibility (MANAGER NODE)
 
@@ -146,12 +148,14 @@ From the Portainer web UI:
 
 This confirms successful server–agent communication.
 
-![image.png]()
+![image.png5](/Screenshots/Docker-Portainer/05-Dokcer_Portainer.png)
+
 
 shows both the manager pi and the worker pi. Local is my manager pi in this case. 
 
 If the worker pi doesn’t show up you can always add it by clicking “add environment”. 
 
-![image.png](attachment:b9ee0a40-9bc4-44e3-b965-c9192f78b557:image.png)
+![image.png6](/Screenshots/Docker-Portainer/06-Dokcer_Portainer.png)
+
 
 Click the different environments and make sure you see different volumes and stacks.
