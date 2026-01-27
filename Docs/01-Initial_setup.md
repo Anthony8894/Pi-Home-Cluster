@@ -11,7 +11,7 @@ Using a **microSD card adapter**, I connected the microSD card to my laptop, whi
 
 To flash the operating system, I used the **Raspberry Pi Imager** application. This tool greatly simplifies the process of preparing a bootable microSD card for Raspberry Pi devices.
 
-![image.png](Pi-Home-Cluster/Screenshots/Initial_Setup/01-Initial_setup.png)
+![image.png](/Screenshots/Initial_setup/01-Initial_setup.png)
 
 First, select the appropriate **Raspberry Pi model**.
 
