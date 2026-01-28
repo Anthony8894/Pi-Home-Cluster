@@ -61,13 +61,13 @@ Swarm initialized: current node (xxxx) is now a manager.
 
 ```
 
-![image.png1](attachment:baf0f657-f7f6-407b-85ae-681ef4819cec:image.png)
+![image.png1](/Screenshots/Docker_Swarm/01-Docker_Swarm.png)
 
 ## Join the Worker Node (WORKER NODE)
 
 On the worker node, type in the command in the picture above
 
-![image.png2](attachment:01f151cf-02ca-4b3e-b2ba-737c5bf60445:image.png)
+![image.png2](/Screenshots/Docker_Swarm/02-Docker_Swarm.png)
 
 This command:
 
@@ -101,11 +101,11 @@ This confirms:
 - Roles are correctly assigned
 - The cluster is operational
 
-![image.png3](attachment:ae19bf6a-3b26-4950-8a75-b8eb816bd11c:image.png)
+![image.png3](/Screenshots/Docker_Swarm/03-Docker_Swarm.png)
 
 NOTE: if you have trouble connecting to swarm. Ensure that swarm is active.
 
-![image.png4](attachment:90499b31-2da1-4c6b-8dd8-c5db87545918:image.png)
+![image.png4](/Screenshots/Docker_Swarm/04-Docker_Swarm.png)
 
 A simple reboot of the docker can help fix it. 
 
