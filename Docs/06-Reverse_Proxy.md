@@ -92,7 +92,7 @@ docker network create proxy
 
 ```
 
-![image1](/Screenshots/Reverse_Proxy/01-Reverse_prox.png)
+![image1](/Screenshots/Reverse_Proxy/01-Reverse_Prox.png)
 
 Verification:
 
@@ -163,7 +163,7 @@ external:true
 
 ```
 
-![image2](/Screenshots/Reverse_Proxy/02-Reverse_prox.png)
+![image2](/Screenshots/Reverse_Proxy/02-Reverse_Prox.png)
 
 Make sure to paste and save this in the nano file. 
 
@@ -263,7 +263,7 @@ input these lines at the bottom of the page:
 192.168.50.199 whoami.lab.local
 192.168.50.199 traefik.lab.local
 
-![image3](/Screenshots/Reverse_Proxy/03-Reverse_prox.png)
+![image3](/Screenshots/Reverse_Proxy/03-Reverse_Prox.png)
 
 Save and then exit. 
 
