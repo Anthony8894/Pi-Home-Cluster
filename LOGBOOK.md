@@ -21,5 +21,4 @@
 - Save config
 - Understand middleware/auth
 
-okokokoko
 
