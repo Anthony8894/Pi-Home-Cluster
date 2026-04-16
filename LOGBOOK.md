@@ -17,9 +17,9 @@
 - Traefik uses labels heavily for config
 
 ### Next step
-- Document setupdsadsa
-- Save configsdsadsadsa
-- Understand middleware/authdsadasdsa
+- Document setup
+- Save config
+- Understand middleware/auth
 
-test
-okoko
+okokokoko
+
