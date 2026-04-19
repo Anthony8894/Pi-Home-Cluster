@@ -1,6 +1,6 @@
 # Homelab Logbook
 
-## 2026-04-04
+<!-- ## 2026-04-04
 
 ### What I did
 - Set up Traefik reverse proxy
@@ -21,4 +21,37 @@
 - Save config
 - Understand middleware/auth
 
+-->
 
+## 04/18/2026 
+
+### what I did today:
+- Installed Prometheus on pi-main to collect metrics
+- Configured prometheus.yml to scrape both nodes:
+* pi-main
+* pi-worker1
+- Installed Grafana for visualization
+- Connected Grafana to Prometheus as a data source
+- Imported Node Exporter dashboard (ID: 1860)
+- Verified both nodes are being monitored and displayed in dashboards
+
+### issues I ran into
+- Prometheus couldn’t reach pi-main (hostname issue → fixed by using IPs)
+- Prometheus container couldn’t access host network (fixed with network_mode: host)
+- Couldn’t access Prometheus from browser (UFW firewall blocking port 9090)
+- Grafana container kept restarting (volume permission issue → fixed with chown 472:472)
+
+### what I learned
+- Prometheus uses a pull model (scrapes targets instead of agents pushing data)
+- Docker containers may not resolve hostnames correctly → use IPs when needed
+- Difference between bridge networking vs host networking
+- How to troubleshoot:
+* local vs container vs network issues
+- Grafana needs proper file permissions for persistent storage
+- Firewalls (UFW) can block services even if they are running correctly
+
+### next steps
+- Put Grafana and Prometheus behind Traefik (HTTPS + domain)
+- Clean up and document architecture in GitHub README
+- Add screenshots of dashboards
+- Monitor an actual service (not just system metrics)
