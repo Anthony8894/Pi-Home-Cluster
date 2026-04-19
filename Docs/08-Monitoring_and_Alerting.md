@@ -155,3 +155,17 @@ This order ensures that metrics are available before visualization.
 Monitoring and alerting are essential for running a stable and reliable environment. By implementing this stack, I am learning how to observe system behavior, detect issues early, and build a more production-ready homelab.
 
 This section marks the transition from simply running services to actively managing and maintaining infrastructure.
+
+
+## Current Progress (as of 04/18/2026)
+
+Completed:
+- Node Exporter deployed on both nodes
+- Prometheus configured and collecting metrics
+- Grafana installed and connected to Prometheus
+- Node Exporter dashboard imported and working
+
+In Progress:
+- cAdvisor (container metrics)
+- Uptime Kuma (service monitoring)
+- Alerting setup
