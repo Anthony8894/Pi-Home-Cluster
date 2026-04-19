@@ -26,6 +26,7 @@
 ## 04/18/2026 
 
 ### what I did today:
+- Everything below contributed to doc 8 in the document folder
 - Installed Prometheus on pi-main to collect metrics
 - Configured prometheus.yml to scrape both nodes:
 * pi-main
