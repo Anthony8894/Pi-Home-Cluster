@@ -78,3 +78,15 @@ labels:
   - "traefik.enable=true"
   - "traefik.http.routers.grafana.rule=Host(`grafana.local`)"
   - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+
+
+## 📝 Lessons Learned
+
+- Each Traefik router must have a unique domain (Host rule)
+- If two services share the same domain, routing becomes inconsistent
+- Reverse proxy issues can appear as login failures or session problems
+- Logs are critical for debugging (especially identifying which service handled the request)
+- Authentication can exist at multiple layers:
+  - Traefik (Basic Auth)
+  - Application (Grafana login)
+- Always test services locally first, then through the reverse proxy

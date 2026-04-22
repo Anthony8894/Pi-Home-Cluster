@@ -56,3 +56,18 @@
 - Clean up and document architecture in GitHub README
 - Add screenshots of dashboards
 - Monitor an actual service (not just system metrics)
+
+## 04/21/2026
+### Log Entry - Traefik / Grafana Issue
+
+Today I troubleshooted an issue where I was unable to log into Grafana using my public domain (grafana.anthonylearchive.com). The page would refresh immediately after entering credentials.
+
+I verified that all containers (Traefik, Grafana, Prometheus) were running correctly using `docker ps`. After reviewing the Traefik logs, I noticed multiple 401 Unauthorized responses and that some requests were being routed to the `whoami` container instead of Grafana.
+
+I checked the Docker labels and found that both the `whoami` container and the Grafana container were using the same Host rule (`grafana.anthonylearchive.com`). This caused Traefik to route requests inconsistently between the two services.
+
+I resolved the issue by assigning a unique domain to the `whoami` container (`whoami.anthonylearchive.com`) and restarting Traefik. After the change, Grafana login worked as expected.
+
+I also reset the Traefik dashboard Basic Auth password by generating a new hash using `htpasswd` and updating the configuration.
+
+Issue resolved successfully.
