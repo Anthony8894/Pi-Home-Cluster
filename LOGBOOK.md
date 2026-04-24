@@ -71,3 +71,25 @@ I resolved the issue by assigning a unique domain to the `whoami` container (`wh
 I also reset the Traefik dashboard Basic Auth password by generating a new hash using `htpasswd` and updating the configuration.
 
 Issue resolved successfully.
+
+
+## 04/23/2026
+installed samba with apt and verified version using: smbd --version
+
+created a shared folder /home/piborgergade/sambashare
+(piborgergade is the username of your device, verify with command: hostname)
+
+Edited the samba config file
+/etc/samba/smb.conf
+added at the bottom:
+[sambashare]
+comment = Samba on Ubuntu
+path = /home/piborgergade/sambashare
+read only = no
+browsable = yes
+valid users = piborgergade
+
+added a samba password for the user
+sudo smbpasswd -a piborgergade
+restart service
+sudo systemctl restart smbd
