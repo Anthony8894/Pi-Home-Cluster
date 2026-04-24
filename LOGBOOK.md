@@ -74,6 +74,9 @@ Issue resolved successfully.
 
 
 ## 04/23/2026
+
+the samba config can be found under file-server-samba!
+
 installed samba with apt and verified version using: smbd --version
 
 created a shared folder /home/piborgergade/sambashare
