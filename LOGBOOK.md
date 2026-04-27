@@ -96,3 +96,14 @@ added a samba password for the user
 sudo smbpasswd -a piborgergade
 restart service
 sudo systemctl restart smbd
+
+
+## 04/26/2026
+
+* started the installation for jellyfin on my pi-worker. This will be installed/configured as a container via docker compose.
+* made new directories for mmt/opt/media etc.
+* added permissions: drwxr-xr-x 2 piborgergade1 piborgergade1 4096 Apr 26 23:18 /mnt/appdata/jellyfin/cache
+drwxr-xr-x 2 piborgergade1 piborgergade1 4096 Apr 26 23:18 /mnt/appdata/jellyfin/config
+drwxr-xr-x 2 piborgergade1 piborgergade1 4096 Apr 26 23:18 /mnt/media
+drwxr-xr-x 2 piborgergade1 piborgergade1 4096 Apr 26 22:58 /opt/stacks/jellyfin
+* next up: create/configre docker-compose.yml
