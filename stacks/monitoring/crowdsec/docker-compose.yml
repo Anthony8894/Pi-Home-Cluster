@@ -1,0 +1,21 @@
+services:
+  crowdsec:
+    image: crowdsecurity/crowdsec:latest
+    container_name: crowdsec
+    restart: unless-stopped
+
+    environment:
+      COLLECTIONS: "crowdsecurity/traefik crowdsecurity/http-cve crowdsecurity/base-http-scenarios"
+
+    volumes:
+      - ./config/acquis.yaml:/etc/crowdsec/acquis.yaml:ro
+      - ./data:/var/lib/crowdsec/data
+      - ./config:/etc/crowdsec
+      - /opt/traefik/logs/access.log:/var/log/traefik/access.log:ro
+
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

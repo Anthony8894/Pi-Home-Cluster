@@ -1,0 +1,30 @@
+Acquisition File
+
+File location:
+
+config/acquis.yaml
+
+Contents:
+
+filenames:
+  - /var/log/traefik/access.log
+labels:
+  type: traefik
+
+This tells CrowdSec to read the Traefik access log and treat the logs as Traefik HTTP traffic.
+
+Enabled Collections
+
+The main collections used are:
+
+crowdsecurity/traefik
+crowdsecurity/http-cve
+crowdsecurity/base-http-scenarios
+
+After installation, CrowdSec also showed these enabled:
+
+crowdsecurity/linux
+crowdsecurity/sshd
+crowdsecurity/whitelist-good-actors
+
+These collections provide parsers and detection scenarios for HTTP traffic, CVE probing, Linux logs, SSH behavior, and trusted/whitelisted traffic.
