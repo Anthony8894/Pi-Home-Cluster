@@ -1,0 +1,37 @@
+services:
+  dozzle:
+    image: amir20/dozzle:latest
+    container_name: dozzle
+    restart: unless-stopped
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - dozzle_data:/data
+
+    environment:
+      DOZZLE_HOSTNAME: pi-main
+      DOZZLE_NO_ANALYTICS: "true"
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+
+      - "traefik.http.routers.dozzle.rule=Host(`dozzle.anthonylearchive.com`)"
+      - "traefik.http.routers.dozzle.entrypoints=websecure"
+      - "traefik.http.routers.dozzle.tls=true"
+      - "traefik.http.routers.dozzle.tls.certresolver=myresolver"
+
+      - "traefik.http.services.dozzle.loadbalancer.server.port=8080"
+
+      # Reuses the existing Traefik basic auth middleware
+      - "traefik.http.routers.dozzle.middlewares=homepage-auth"
+
+    networks:
+      - proxy
+
+volumes:
+  dozzle_data:
+
+networks:
+  proxy:
+    external: true
