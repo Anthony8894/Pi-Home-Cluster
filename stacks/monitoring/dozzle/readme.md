@@ -15,6 +15,7 @@ pi-main
 Access URL:
 
 https://dozzle.anthonylearchive.com
+
 Why I Added Dozzle
 
 I added Dozzle because many of my homelab services run in Docker, and checking logs is a common troubleshooting step.
