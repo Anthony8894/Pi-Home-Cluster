@@ -1,0 +1,109 @@
+# Uptime Kuma
+
+## What is Uptime Kuma?
+
+Uptime Kuma is a self-hosted monitoring tool.
+
+I use it in my homelab to check if my websites, services, and devices are online.
+
+For example, Uptime Kuma can monitor:
+
+- Homepage
+- Grafana
+- Portainer
+- Vaultwarden
+- Nextcloud
+- Traefik
+- Other local or public services
+
+If something goes down, Uptime Kuma can show it on the dashboard and can also send notifications if configured.
+
+---
+
+## Why I Installed It
+
+The goal of this project is to make it easier to see the health of my homelab.
+
+Instead of manually checking every website or service, Uptime Kuma gives me one dashboard where I can quickly see what is working and what is down.
+
+This is useful because my homelab has multiple services running behind Traefik and Docker.
+
+---
+
+## How It Works in My Homelab
+
+Uptime Kuma runs as a Docker container on my Raspberry Pi.
+
+It is available in two ways:
+
+### Local Access
+
+```text
+http://192.168.50.199:3002
+```
+
+Domain Access
+https://uptime.anthonylearchive.com
+
+The domain version works through Traefik.
+
+Traefik receives the request for:
+
+uptime.anthonylearchive.com
+
+Then Traefik sends the request to the Uptime Kuma container.
+
+Traefik Labels
+
+The labels tell Traefik how to expose Uptime Kuma through my domain.
+
+- "traefik.enable=true"
+
+This tells Traefik to manage this container.
+
+- "traefik.http.routers.uptime-kuma.rule=Host(`uptime.anthonylearchive.com`)"
+
+This tells Traefik:
+
+When someone visits uptime.anthonylearchive.com, send them to Uptime Kuma.
+- "traefik.http.routers.uptime-kuma.entrypoints=websecure"
+
+This tells Traefik to use the HTTPS entrypoint.
+
+- "traefik.http.routers.uptime-kuma.tls=true"
+
+This enables HTTPS.
+
+- "traefik.http.routers.uptime-kuma.tls.certresolver=myresolver"
+
+This tells Traefik to use my working certificate resolver for SSL certificates.
+
+- "traefik.http.services.uptime-kuma.loadbalancer.server.port=3001"
+
+This tells Traefik that Uptime Kuma runs on port 3001 inside the container.
+
+Network
+networks:
+  - proxy
+
+This connects Uptime Kuma to the same Docker network as Traefik.
+
+At the bottom:
+
+networks:
+  proxy:
+    external: true
+
+This means the proxy network already exists and is shared with Traefik
+
+Example Services to Monitor
+
+Some services I can add to Uptime Kuma include:
+
+Service	Example URL
+Homepage	https://homepage.anthonylearchive.com
+Portainer	https://portainer.anthonylearchive.com
+Grafana	https://grafana.anthonylearchive.com
+Vaultwarden	https://vaultwarden.anthonylearchive.com
+Nextcloud	https://nextcloud.anthonylearchive.com
+Dozzle	https://dozzle.anthonylearchive.com
